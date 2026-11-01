@@ -1,0 +1,121 @@
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f1f5f2;
+  color: #18372d;
+}
+
+header {
+  background: #123b32;
+  color: white;
+  padding: 18px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+header h2 {
+  margin: 5px 0;
+}
+
+main {
+  max-width: 1000px;
+  margin: auto;
+  padding: 18px;
+}
+
+button {
+  background: #197253;
+  color: white;
+  border: 0;
+  padding: 11px 16px;
+  border-radius: 7px;
+  cursor: pointer;
+  margin: 4px;
+}
+
+button:hover {
+  background: #10533c;
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.card {
+  background: white;
+  padding: 18px;
+  margin: 10px 0;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px #0001;
+}
+
+nav {
+  margin: 20px 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.section {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  margin-top: 15px;
+}
+
+.hidden {
+  display: none;
+}
+
+input, textarea, select {
+  width: 100%;
+  padding: 12px;
+  margin: 7px 0;
+  border: 1px solid #ccd8d0;
+  border-radius: 7px;
+  font-size: 15px;
+}
+
+textarea {
+  min-height: 85px;
+}
+
+.record {
+  background: #f4f8f5;
+  padding: 13px;
+  border-radius: 8px;
+  margin: 10px 0;
+  overflow-wrap: anywhere;
+}
+
+.record button {
+  background: #b52d2d;
+}
+
+a {
+  color: #14704e;
+  font-weight: bold;
+}
+
+@media(max-width:600px) {
+  .stats {
+    grid-template-columns: 1fr;
+  }
+
+  header h2 {
+    font-size: 18px;
+  }
+
+  main {
+    padding: 10px;
+  }
+}

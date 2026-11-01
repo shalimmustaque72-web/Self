@@ -1,0 +1,96 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Construction Site Manager</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <h2>🏗️ Construction Site Manager</h2>
+  <button onclick="exportCSV()">Export CSV</button>
+</header>
+
+<main>
+  <section class="stats">
+    <div class="card">Work Records <h2 id="workCount">0</h2></div>
+    <div class="card">Materials <h2 id="materialCount">0</h2></div>
+    <div class="card">Files <h2 id="fileCount">0</h2></div>
+  </section>
+
+  <nav>
+    <button onclick="showTab('work')">Daily Work</button>
+    <button onclick="showTab('materials')">Materials</button>
+    <button onclick="showTab('files')">Files</button>
+    <button onclick="showTab('tools')">AI Tools</button>
+  </nav>
+
+  <section id="work" class="section">
+    <h2>Daily Work Record</h2>
+    <form id="workForm">
+      <input id="workTitle" placeholder="Work Title" required>
+      <input id="workDate" type="date" required>
+      <input id="workLocation" placeholder="Location / Floor">
+      <input id="manpower" type="number" placeholder="Number of Workers">
+      <textarea id="workDetails" placeholder="Work Details"></textarea>
+      <button>Save Work</button>
+    </form>
+    <input id="workSearch" placeholder="Search work..." oninput="render()">
+    <div id="workList"></div>
+  </section>
+
+  <section id="materials" class="section hidden">
+    <h2>Material Inventory</h2>
+    <form id="materialForm">
+      <input id="materialName" placeholder="Material Name" required>
+      <input id="quantity" type="number" min="0" placeholder="Quantity" required>
+      <input id="unit" placeholder="Unit (Bag, KG, CFT, PCS)">
+      <select id="status">
+        <option>Available</option>
+        <option>Low Stock</option>
+        <option>Out of Stock</option>
+        <option>To Order</option>
+      </select>
+      <button>Save Material</button>
+    </form>
+    <input id="materialSearch" placeholder="Search materials..." oninput="render()">
+    <div id="materialList"></div>
+  </section>
+
+  <section id="files" class="section hidden">
+    <h2>Site Photos & Documents</h2>
+    <form id="fileForm">
+      <input id="fileInput" type="file" accept="image/*,video/*,.pdf,.doc,.docx" required>
+      <input id="fileDescription" placeholder="File Description">
+      <button>Save File</button>
+    </form>
+    <div id="fileList"></div>
+  </section>
+
+  <section id="tools" class="section hidden">
+    <h2>AI & Digital Tools</h2>
+    <div class="card">
+      <a href="https://chatgpt.com/" target="_blank">ChatGPT</a>
+      <p>Reports, planning and checklists</p>
+    </div>
+    <div class="card">
+      <a href="https://gemini.google.com/" target="_blank">Google Gemini</a>
+      <p>Document and image assistance</p>
+    </div>
+    <div class="card">
+      <a href="https://copilot.microsoft.com/" target="_blank">Microsoft Copilot</a>
+      <p>Office productivity</p>
+    </div>
+    <div class="card">
+      <a href="https://notebooklm.google.com/" target="_blank">NotebookLM</a>
+      <p>Project document analysis</p>
+    </div>
+  </section>
+</main>
+
+<script src="app.js"></script>
+</body>
+</html>
